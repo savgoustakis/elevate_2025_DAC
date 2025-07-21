@@ -1,0 +1,51 @@
+AbuseIPDB_Blocklist:
+  description: confidenceMinimum=90
+  resource_name: projects/zerotrust-svcsproject00-mngmnt/locations/australia-southeast1/instances/32e95a90-f7e0-4a26-9591-7d48806582d1/referenceLists/AbuseIPDB_Blocklist
+  revision_create_time: '2024-12-07T09:03:59.218159Z'
+  rule_associations_count: null
+  rules: null
+  syntax_type: REFERENCE_LIST_SYNTAX_TYPE_PLAIN_TEXT_STRING
+HelloKitty:
+  description: HelloKitty ransomware
+  resource_name: projects/zerotrust-svcsproject00-mngmnt/locations/australia-southeast1/instances/32e95a90-f7e0-4a26-9591-7d48806582d1/referenceLists/HelloKitty
+  revision_create_time: '2024-12-07T09:03:57.512079Z'
+  rule_associations_count: null
+  rules: null
+  syntax_type: REFERENCE_LIST_SYNTAX_TYPE_PLAIN_TEXT_STRING
+Internal_IP_Ranges:
+  description: Internal IP
+  resource_name: projects/zerotrust-svcsproject00-mngmnt/locations/australia-southeast1/instances/32e95a90-f7e0-4a26-9591-7d48806582d1/referenceLists/Internal_IP_Ranges
+  revision_create_time: '2024-12-07T09:03:56.521439Z'
+  rule_associations_count: null
+  rules: null
+  syntax_type: REFERENCE_LIST_SYNTAX_TYPE_CIDR
+key_servers:
+  description: Key server names - Used for rules workshop
+  resource_name: projects/zerotrust-svcsproject00-mngmnt/locations/australia-southeast1/instances/32e95a90-f7e0-4a26-9591-7d48806582d1/referenceLists/key_servers
+  revision_create_time: '2024-12-07T09:04:00.953183Z'
+  rule_associations_count: null
+  rules: null
+  syntax_type: REFERENCE_LIST_SYNTAX_TYPE_PLAIN_TEXT_STRING
+ntds_suspicious_processes:
+  description: process names often associated with accessing ntds.dit - Used for rules
+    workshop - Stoner
+  resource_name: projects/zerotrust-svcsproject00-mngmnt/locations/australia-southeast1/instances/32e95a90-f7e0-4a26-9591-7d48806582d1/referenceLists/ntds_suspicious_processes
+  revision_create_time: '2024-12-07T09:04:00.728927Z'
+  rule_associations_count: null
+  rules: null
+  syntax_type: REFERENCE_LIST_SYNTAX_TYPE_PLAIN_TEXT_STRING
+suspicious_asn:
+  description: Listing of ASNs to Alert On
+  resource_name: projects/zerotrust-svcsproject00-mngmnt/locations/australia-southeast1/instances/32e95a90-f7e0-4a26-9591-7d48806582d1/referenceLists/suspicious_asn
+  revision_create_time: '2024-12-07T09:03:59.826671Z'
+  rule_associations_count: null
+  rules: null
+  syntax_type: REFERENCE_LIST_SYNTAX_TYPE_PLAIN_TEXT_STRING
+user_agents:
+  description: useragents
+  resource_name: projects/zerotrust-svcsproject00-mngmnt/locations/australia-southeast1/instances/32e95a90-f7e0-4a26-9591-7d48806582d1/referenceLists/user_agents
+  revision_create_time: '2024-10-18T11:06:35.028783Z'
+  rule_associations_count: 1
+  rules:
+  - projects/1009922818255/locations/australia-southeast1/instances/32e95a90-f7e0-4a26-9591-7d48806582d1/rules/ru_b1d21fe7-f5ca-441c-a0aa-a137f2cd3156
+  syntax_type: REFERENCE_LIST_SYNTAX_TYPE_PLAIN_TEXT_STRING

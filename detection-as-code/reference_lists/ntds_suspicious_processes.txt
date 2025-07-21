@@ -1,0 +1,4 @@
+ntdsutil
+vssadmin
+diskshadow
+esentutl

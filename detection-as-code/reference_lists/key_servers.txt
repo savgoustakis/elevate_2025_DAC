@@ -1,0 +1,4 @@
+activedir
+sql
+exchange
+sap

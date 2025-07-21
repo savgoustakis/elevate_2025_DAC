@@ -1,0 +1,15 @@
+rule powershell_scheduled_task_creation {
+  meta:
+    author = "Google SecOps Gemini"
+    description = "Detects PowerShell scheduled task creation"
+    severity = "LOW"
+  events:
+    $e.metadata.event_type = "SCHEDULED_TASK_CREATION"
+    $e.principal.process.file.full_path = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    $e.principal.process.command_line = /schtasks\.exe \/create \/TN OneDriveCoreTask-S-1-5-21-5466262771-899953646639-1001 \/SC minute \/mo 4 \/tr C:\\Users\\Public\\Libraries\\Recorded\.vbs \/f/ nocase
+  outcome:
+    $task_name = $e.target.process.file.full_path
+    $user = $e.principal.user.userid
+  condition:
+    $e
+}

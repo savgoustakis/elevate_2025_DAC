@@ -1,0 +1,23 @@
+rule psexec_via_impacket_python_module {
+  meta:
+    author = "Author"
+    description = "This Action demonstrates a host attempting to execute an IMPACKET python module compiled to a Windows binary. This particular IMPACKET module is responsible for remote code execution via IMPACKET's python implementation of PSEXEC, this Action specifically runs \"whoami\" to determine privilege level of the remote shell. IMPACKET is a collection of python scripts that can used to interact with network protocols, including SMB and HTTP, to aid in lateral movement and data exfiltration. More information about IMPACKET can be found on the Mandiant Advantage Summary Page. For this Action to properly execute, the target server needs to be a Windows machine and the credentials for accessing that machine must be provided. NOTE: This Action will request input of potentially sensitive information. The information may be transmitted or stored in logs in cleartext."
+    severity = "LOW"
+    url = "https://attack.mitre.org/techniques/T1021.002/"
+    tactic = "Lateral Movement"
+    technique = "SMB/Windows Admin Shares"
+    tags = "MITRE ATT&CK, T1021.002, Lateral Movement, Service Execution, T1569.002, Execution"
+
+  events:
+    $e.metadata.event_type = "PROCESS_LAUNCH"
+    re.regex($e.target.process.file.full_path, `\\psexec\.exe$`) nocase
+    re.regex($e.target.process.command_line, `whoami`) nocase
+
+  outcome:
+    $process_name = $e.target.process.file.full_path
+    $command_line = $e.target.process.command_line
+    $user = $e.principal.user.userid
+    $hostname = $e.principal.hostname
+  condition:
+    $e
+}

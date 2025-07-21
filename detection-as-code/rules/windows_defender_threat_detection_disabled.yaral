@@ -1,0 +1,19 @@
+rule windows_defender_threat_detection_disabled {
+ meta:
+    author = ""
+    description = "someone disables Windows Defender within your monitored environment"
+    license = "DRL 1.1"
+    version = "0.01"
+    rule_id = "a1954c05-b758-4604-bd2c-11e6e5deec35"
+    status = "stable"
+    tags = ""
+    falsepositives = ""
+    severity = "low"
+    created = "2024-11-03"
+
+  events:
+    ($e.metadata.product_event_type = "5001" or $e.metadata.product_event_type = "5010" or $e.metadata.product_event_type = "5012" or $e.metadata.product_event_type = "5101")
+
+  condition:
+    $e
+}

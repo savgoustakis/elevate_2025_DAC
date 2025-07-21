@@ -1,0 +1,11 @@
+rule trojan_win32_powemet_a_attk {
+  meta:
+    author = "Gemini Advanced"
+    description = "Detects Trojan:Win32/Powemet.A!attk based on security_result.rule_name"
+    yara_version = "YL2.0"
+    rule_version = "1.0"
+  events:
+    $e.security_result.rule_name = "Trojan:Win32/Powemet.A!attk"
+  condition:
+    $e
+}

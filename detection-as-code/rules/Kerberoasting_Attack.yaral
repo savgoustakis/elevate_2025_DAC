@@ -1,0 +1,13 @@
+rule Kerberoasting_Attack
+{
+  meta:
+    description = "Detect Kerberoasting attack - test02"
+    author = "DetectionAsCode"
+    severity = "CRITICAL"
+  events:
+    $e.metadata.event_type = "NETWORK_HTTP"
+    $e.network.http.user_agent in %user_agents
+    $e.network.http.response_code = 401
+  condition:
+    $e
+}
